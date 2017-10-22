@@ -1,4 +1,4 @@
 # DeepLearning-Study
-## Department of Physics, Incheon National University 
-### LP DeepLearning StudyGroup
+Department of Physics, Incheon National University 
+LP DeepLearning StudyGroup
 ---
