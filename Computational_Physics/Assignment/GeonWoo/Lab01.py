@@ -66,9 +66,23 @@ sincFunction()
 
 # problem 1-5
 def triangluarNumber(N) :
-    print("1-5. answer : ",N * (N + 1) / 2)
+    print("1-5. answer : ",N * (N + 1) / 2,"\n")
 triangluarNumber(11)
 
 # problem 1-6
 def isPrime(N) :
-    pass
+    temp = np.arange(1, N + 1, 1)
+    counter = len(temp) - 1
+    flag = True
+    while flag :    
+        if temp[len(temp) - 1] % temp[counter - 1] != 0 :
+            if counter == 2 :
+                break
+            counter -= 1
+        else :
+            flag = False
+            return print("1-6.", N, "is not Prime Number.")
+    return print("1-6.", N, "is Prime Number.")
+        
+    
+isPrime(17)
