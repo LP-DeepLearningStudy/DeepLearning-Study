@@ -71,7 +71,7 @@ plt.show()
 print(root_newton(fun02, dFun02, 4))
 
 
-# Example 2.1.1 - simple integration
+# Example 2.1.1 - simple integration, inefficient
 def int_simple(fn, a, b, N) :
     I = 0
     dx = (b-a) / float(N)
@@ -95,3 +95,5 @@ plt.show()
 print(int_simple(vFun03, 0, 5, 50))
 
 
+ # Example 2.1.3 - simpson's method
+ 
