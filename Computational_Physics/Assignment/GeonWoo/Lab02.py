@@ -34,7 +34,7 @@ plt.title("Ex 2.0.2 Root bisection method")
 plt.plot(testSet, vFun01(testSet))
 plt.plot(testSet, zeroLine)
 plt.show()
-print(root_bisection(fun01, 0, 5))
+print("Example 2.0.2 - root bisection Answer : " + str(root_bisection(fun01, 0, 5)))
 
 
 # Example 2.0.4 - newton's method
@@ -68,7 +68,7 @@ plt.title("Ex 2.0.4 newton's method")
 plt.plot(testSet, vFun02(testSet))
 plt.plot(testSet, zeroLine)
 plt.show()
-print(root_newton(fun02, dFun02, 4))
+print("Example 2.0.4 - newton's method Answer : " + str(root_newton(fun02, dFun02, 4)))
 
 
 # Example 2.1.1 - simple integration, inefficient
@@ -88,12 +88,24 @@ vFun03 = np.vectorize(fun03)
 testSet = np.linspace(0,5, num=50)
 
 # Plotting
-plt.title("Ex 2.1.1 simple integration")
-plt.plot(testSet, vFun03(testSet))
-plt.plot(testSet, zeroLine)
-plt.show()
-print(int_simple(vFun03, 0, 5, 50))
+print("Example 2.1.1 - simple integration Answer : " + str(int_simple(vFun03, 0, 5, 50)))
 
 
  # Example 2.1.3 - simpson's method
- 
+def int_simpson(f, dx):
+    N = len(f)
+    integral = 0.0
+     
+    for i in range(1, N-1, 2) :
+         integral = integral + f[i-1] + 4.0 * f[i] + f[i+1]
+         
+    integral = integral * dx / 3.0
+    
+    if (N % 2) == 0 :
+        integral = integral + dx * (5.0 * f[-1] + 8.0 * f[-2] - f[-3]) / 12.0
+    return integral
+
+
+ # Example 2.2.1 - derivative
+from scipy.misc import derivative
+print("Example 2.2.1 - derivative Answer : " + str(derivative(np.sin, np.pi / 2)))
