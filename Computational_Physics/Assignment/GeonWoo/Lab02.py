@@ -109,3 +109,25 @@ def int_simpson(f, dx):
  # Example 2.2.1 - derivative
 from scipy.misc import derivative
 print("Example 2.2.1 - derivative Answer : " + str(derivative(np.sin, np.pi / 2)))
+
+
+ # Problem 2-0 - integration : secant method 
+def int_secant():
+    pass
+
+
+ # Problem 2-1 - integration : trapezoid method
+def int_trapezoid():
+    pass
+
+
+ # Problem 2-4 - double integrals
+def double_int():
+    pass
+
+
+ # Problem 2-5 - Fermi-Dirac distribution
+def Fermi_Dirac():
+    pass
+ 
+
