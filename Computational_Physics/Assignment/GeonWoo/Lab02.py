@@ -111,6 +111,7 @@ from scipy.misc import derivative
 print("Example 2.2.1 - derivative Answer : " + str(derivative(np.sin, np.pi / 2)))
 
 
+## Chapter 2 Problems
  # Problem 2-0 - integration : secant method 
 def int_secant():
     pass
