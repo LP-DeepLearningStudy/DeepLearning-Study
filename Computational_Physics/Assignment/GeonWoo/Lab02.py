@@ -127,7 +127,11 @@ def double_int():
 
 
  # Problem 2-5 - Fermi-Dirac distribution
-def Fermi_Dirac():
-    pass
+def Fermi_Dirac(x):
+    # 실온이라고 가정 KT = 1 / 40 
+    return (1 / ( math.exp( (x - mu) / (1 / 40) ) + 1 ))
+vFermi_Dirac = np.vectorize(Fermi_Dirac)
+print("Problem 2-0 - Answer : " + str(int_simple(Fermi_Dirac, 0, 2, 50)))
+
  
 
