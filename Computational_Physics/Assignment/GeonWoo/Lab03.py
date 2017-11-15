@@ -46,8 +46,42 @@ print(np.sin(x),"\n")
    2w - x + 3y - z = 5
      w + x + y + z = 10
 """
-M = np.array([])
-b = np.array()
-x = linalg.solve(M,b)
+M = np.array([ [1,3,-5,2], [0,4,-2,1], [2,-1,3,-1], [1,1,1,1] ])
+b = np.array([0,6,5,10])
+print(linalg.solve(M,b),"\n")
  
+ # 넘파이 어레인지 - 0부터 10까지 0.5 씩 증가 배열
+print(np.arange(0, 10, 0.5),"\n")
+
+ # 넘파이 린스페이스 - 어레인지와 비슷하나 배열 갯수를 지정
+print(np.linspace(0,10,5),"\n") # 배열 갯수는 5개
+
+ # 넘파이 로그스페이스 - 상용로그 스케일
+print(np.logspace(0, 3, 5),"\n")
+
+ # 넘파이 영행렬
+print(np.zeros([2,3], np.float32),"\n")
+ 
+ # 사이파이 적분
+from scipy.integrate import quad
+print(quad(np.sin, 0, np.pi),"\n")
+
+ # 사이파이 적분
+print(quad(lambda x: np.exp(-x), 0, np.inf),"\n")
+
+
+ # Problem 3-0 방정식 풀기
+def solving_equation():
+    M = np.array([[0.2, 1, 1, 1, -1, -1], 
+                  [1, 0, 1, -1, 5, 1], 
+                  [-1, -3, 2, -1, -1, -1], 
+                  [0, 5, -1, 1, 2, 0], 
+                  [1, -2, 3, 0.5, 0, 0], 
+                  [0.5, -2, -2, -1, 1, -6]])
+    b = np.array([24.1312, 46.2798, -61.8372, 31.1466, 51.2106, -5.7008])
+    print("Problem 3-0 Answer : ", linalg.solve(M,b), "\n")
+solving_equation()
+
+
+
  
