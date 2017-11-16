@@ -90,10 +90,9 @@ def throwBall():
     g = -9.8
     t = np.arange(0,1.5, 0.001)
     y= y_ + t*v_ + 0.5 * g * np.power(t,2)
-    plt.title("Problem 3-1 thorwBall")
+    plt.title("Problem 3-1 throwBall")
     plt.plot(t, y)
     plt.show()
 throwBall()
-
 
  
