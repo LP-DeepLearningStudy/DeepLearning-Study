@@ -114,7 +114,6 @@ for i in range(5):
     block_list.add(ablock)
  
 done = False
-clock = pygame.time.Clock()
 score = 0
  
 while not done:
@@ -150,7 +149,6 @@ while not done:
  
     block_list.update()
     block_list.draw(screen)
-    clock.tick(60)
     pygame.display.flip()
  
 pygame.quit()
