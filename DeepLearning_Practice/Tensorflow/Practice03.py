@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import tensorflow as tf
 
 """
- Practice03 - 
+ Practice03 - placeholder와 variable
  참고자료 : https://github.com/golbin/TensorFlow-Tutorials/blob/master/03%20-%20TensorFlow%20Basic/02%20-%20Variable.py
 """
 

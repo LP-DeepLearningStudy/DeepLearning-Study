@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import tensorflow as tf
 
 """
- Practice04 - 
+ Practice04 - 선형회귀 
 """
 
 # 1. 노드생성
