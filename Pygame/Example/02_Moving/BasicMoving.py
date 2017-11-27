@@ -23,6 +23,10 @@ class Main :
         
         # 파이게임 화면 설정
         self.screen = pygame.display.set_mode([self.screen_width, self.screen_height])
+        
+        # 위치변수
+        self.x = 10
+        self.y = 10
           
     def initializeGame(self) :
         
@@ -33,13 +37,15 @@ class Main :
                     self.done = True
                     pygame.quit()           
             self.screen.fill(self.WHITE)        # 배경은 흰색
-            
-            self.drawBlock()                    # 상자 그리기
+                        
+            self.drawBlock(self.x, self.y)      # 상자 그리기
+            self.x += 0.05
+            self.y += 0.05
             
             pygame.display.flip()               # 화면 업데이트
             
-    def drawBlock(self) :
-         pygame.draw.rect(self.screen,self.RED,(200,150,100,50))
+    def drawBlock(self, x_, y_) :
+         pygame.draw.rect(self.screen,self.RED,(x_, y_,10,10))
         
 pygame.init()                                   # 파이게임 모듈 초기화
 game = Main()                                   # Main 인스턴스 생성 
