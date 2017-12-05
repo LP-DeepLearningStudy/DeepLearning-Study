@@ -3,6 +3,8 @@
 Created on Tue Dec  5 17:22:18 2017
 
 @author: Hunbeom Bak
+
+참고 사이트 :http://www.petercollingridge.co.uk/pygame-physics-simulation/randomness
 """
 import pygame
 import random
