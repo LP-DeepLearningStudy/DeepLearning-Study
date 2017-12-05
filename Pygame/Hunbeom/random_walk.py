@@ -52,8 +52,7 @@ class Main :
             
             self.drawLine()                       #선 그리기
             
-            if r==640 or r==0:                      #양쪽 끝에 도달하면 종료
-                self.done = True
+            
             
             pygame.display.flip()               # 화면 업데이트
             
