@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Dec  5 17:45:56 2017
+Created on Wed Dec  6 12:22:34 2017
 
 @author: Hunbeom Bak
 
-참고 사이트:http://www.petercollingridge.co.uk/pygame-physics-simulation/randomness
+참고 사이트 : http://www.petercollingridge.co.uk/pygame-physics-simulation/movement
 """
 
 import pygame
 import random
-
+import math
 
 #기본 셋팅
 background_color = (255,255,255) #흰색
@@ -22,16 +22,23 @@ class Particle:
         self.size = size
         self.color = (0, 0,0)
         self.thickness = 1
+        self.speed =0.01 #속도
+        self.angle=0 #각도
 
     def display(self):
-        pygame.draw.circle(screen, self.color, (self.x, self.y), self.size, self.thickness)
+        pygame.draw.circle(screen, self.color, (int(self.x), int(self.y)), self.size, self.thickness)
+    
+    def move(self):
+        self.x += math.sin(self.angle) * self.speed 
+        self.y -= math.cos(self.angle) * self.speed
+        self.angle = math.pi/2
+
 
 screen = pygame.display.set_mode((width, height)) #창 크기 설정
-pygame.display.set_caption('입자 여러개 그리기') # 창 제목 설정
+pygame.display.set_caption('4.입자 운동') # 창 제목 설정
 screen.fill(background_color) #배경색 설정
 
 #반경이 10~20 픽셀인 여러개의 입자를 임의의 위치에 그리기
-
 number_of_particles = 10 #입자의 갯수
 my_particles = [] #입자에 대한 정보를 집어 넣음
 
@@ -43,18 +50,19 @@ for n in range(number_of_particles):
     y= random.randint(size, height - size)#y도 x와 마찬가지 
     my_particles.append(Particle((x, y), size)) # 랜덤으로 나온 값을 my_particles에 집어 넣음
 
-for particle in my_particles: #my_particles = [] 안에 있는 각각 정보마다 반복
-    particle.display() #그려라
-    
-
-
-pygame.display.flip() #창을 띄운다
 
 #창을 닫을때 까지 계속 열려있음
+
 running = True
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
             pygame.quit ()
+    screen.fill(background_color) #배경색 설정 및 입자 움직이면 잔상이 남으므로 while문 안에 넣어서 잔상을 없애버림       
             
+        #창을 닫을때 까지 입자들이 움직임 따라서 while루프 안으로 이동 
+    for particle in my_particles: #my_particles = [] 안에 있는 각각 정보마다 반복
+        particle.move()
+        particle.display() #그려라
+    pygame.display.flip()#창을 띄운다
