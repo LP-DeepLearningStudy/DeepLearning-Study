@@ -26,8 +26,12 @@ learning_rate = 0.01
 iterations = 500
 
 # Open, High, Low, Volume, Close
+<<<<<<< HEAD
 xy = data.DataReader("KRX:KOSPI", "google", datetime(2017,1,1), datetime(2017,10,31))
 print(xy)
+=======
+xy = data.DataReader("KRX:KOSPI", "google", datetime(2010,1,1), datetime(2017,11,16))
+>>>>>>> aa30f4ae40eaf73badcc871f9f6d497959a574f8
 xy = xy.as_matrix()
 xy = xy[:,1:4]  # reverse order (chronically ordered)
 xy = MinMaxScaler(xy)
