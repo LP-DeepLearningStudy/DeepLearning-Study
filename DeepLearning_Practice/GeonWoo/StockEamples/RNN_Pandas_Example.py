@@ -6,7 +6,7 @@ import tensorflow as tf
 import numpy as np
 from datetime import datetime
 
-tf.set_random_seed(777)  # reproducibility
+tf.set_random_seed(1234)  # reproducibility
 
 import matplotlib.pyplot as plt
 
@@ -26,7 +26,12 @@ learning_rate = 0.01
 iterations = 500
 
 # Open, High, Low, Volume, Close
+<<<<<<< HEAD
 xy = data.DataReader("KRX:000060", "google", datetime(2010,1,1), datetime(2017,11,16))
+=======
+xy = data.DataReader("KRX:KOSPI", "google", datetime(2017,1,1), datetime(2017,10,31))
+print(xy)
+>>>>>>> 31f3a2dcd775d5bdd5da1364e4106af87858caa8
 xy = xy.as_matrix()
 xy = xy[:,1:4]  # reverse order (chronically ordered)
 xy = MinMaxScaler(xy)
