@@ -1,21 +1,4 @@
 import gym
-<<<<<<< HEAD
-env = gym.make('CartPole-v0')
-env.reset()
-random_episodes = 0
-reward_sum = 0
-while random_episodes < 10 :
-    env.render()
-    action = env.action_space.sample()
-    observation, reward, done, _ = env.step(action)
-    print(observation, reward, done)
-    reward_sum += reward
-    if done :
-        random_episodes += 1
-        print("Reward for this episodes: ", reward_sum)
-        reward_sum = 0
-        env.reset()
-=======
 import tensorflow as tf
 import numpy as np
 
@@ -85,4 +68,3 @@ while True :
     if done :
         print("Total Score: {}".format(reward_sum))
         break
->>>>>>> f0d3d33cc59412638c8426062538d5427fb68563
