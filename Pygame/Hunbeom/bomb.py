@@ -32,15 +32,15 @@ class Particle:
         self.size = size
         self.color = (0, 0,0)
         self.thickness = 1
-        self.speed =10 #속도
+        self.speed =0 #속도
         self.angle=0 #각도
 
     def display(self):
         pygame.draw.circle(screen, self.color, (int(self.x), int(self.y)), self.size, self.thickness)
     
     def move(self):
-        self.x += 10*math.sin(self.angle) * self.speed 
-        self.y -= 10*math.cos(self.angle) * self.speed
+        self.x += 3*math.sin(self.angle) * self.speed 
+        self.y -= 3*math.cos(self.angle) * self.speed
 
 
 screen = pygame.display.set_mode((width, height)) #창 크기 설정
