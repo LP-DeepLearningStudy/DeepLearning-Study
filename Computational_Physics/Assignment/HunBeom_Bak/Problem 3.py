@@ -9,6 +9,7 @@ from numpy import *
 from numpy.linalg import*
 import matplotlib.pyplot as plt
 from scipy.optimize import brentq
+from random import *
 
 #3-0
 #ax=b
@@ -34,7 +35,7 @@ plt.show()
 
 #3-2
 def spring(yo,k,m):
-    t=linspace(0,10, 1000)
+    t=linspace(0,10, 333)
     w0=(k/m)**(1/2)
     y=yo*cos(w0*t)
     
@@ -60,3 +61,40 @@ def spring_phasespace(yo,k,m):
     plt.show()
 
 spring_phasespace(6,3.5,1)
+
+#3-4
+def damping(yo,k,m):
+    t=linspace(0,50, 1000)
+    w0=(k/m)**(1/2)
+    r=0.05 #미급감쇠
+    q=(r**2-w0**2)**(1/2)
+    wd=(w0**2)**(1/2)
+    y=exp(-r*t)*(y0*sin(wd*t))
+    
+    plt.plot(t,y,'g-')
+    plt.title('Problem 3-4 Position')
+    plt.xlabel('time')
+    plt.ylabel('position')
+    plt.show()
+    
+damping(6,3.5,1)    
+      
+    
+def damping_phasespace(yo,k,m):   
+    t=linspace(0,50, 1000)
+    w0=(k/m)**(1/2)
+    r=0.05 #미급감쇠
+    q=(r**2-w0**2)**(1/2)
+    wd=(w0**2)**(1/2)
+    y=exp(-r*t)*(y0*sin(wd*t))
+    yprime=-yo*exp(-r*t)*(y0*cos(wd*t)-wd*cos(wd*t))
+    
+    plt.plot(y,yprime,'g-')
+    plt.title('Problem 3-4 Position')
+    plt.xlabel('y')
+    plt.ylabel('yprime')
+    plt.show()
+
+damping_phasespace(6,3.5,1)    
+    
+    
