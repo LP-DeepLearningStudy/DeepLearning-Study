@@ -89,8 +89,10 @@ import matplotlib.pyplot as plt
 #코사인과 사인을 -pi부터 pi까지 그리기
 from pylab import *
 x=arange(-pi,pi,pi/100)
-plt.plot(x, sin(x),'b-', label='sine')
-plt.plot(x, cos(x),'g--', label='cosine')
+y=sin(x)
+z=cos(x)
+plt.plot(x, y,'b-', label='sine')
+plt.plot(x, z,'g--', label='cosine')
 plt.xlabel('x value')
 plt.ylabel('trig function value')
 plt.xlim(-pi,pi)

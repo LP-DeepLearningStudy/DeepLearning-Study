@@ -25,6 +25,7 @@ plt.plot(time,height,'m-^')                             #m-^: 화살표로 칸 �
 plt.plot(time,0.3*np.sin(time*3),'g-')                  #g-:그냥 선, g는 초록색
 plt.legend(['damped','constant amplitude'],loc='upper right')   #각 그래프마다 이름 붙이고 오른쪽 위에 표시
 plt.xlabel('Time(s)')                                           #x축 이름
+plt.show()
 
 #Ex0.1.1 Kirchhoff's laws
 A= np.array([[-13,2,4],[2,-11,6],[4,6,-15]])

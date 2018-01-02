@@ -48,7 +48,7 @@ def Y(a,b):
         
 plt.plot(Y(0,0))
 plt.show()
-
+'''
 #1.3
 def energy(L1):    
     pi=3.1415
@@ -63,7 +63,7 @@ def energy(L1):
                 print(i,",",j,",",k,":",E)
                 
 energy(1)
-
+'''
 
 #1.4
 x=np.linspace(-200,200)
