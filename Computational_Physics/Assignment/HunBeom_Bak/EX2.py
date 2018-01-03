@@ -9,7 +9,7 @@ from pylab import *
 from scipy.optimize import brentq
 from sympy import *
 
-'''
+
 #EX2.0.5
 
 x=brentq(sin, 2,4)               #2와 4사이에 있는 x값중 sin을 0되게 하는값 출력
@@ -40,7 +40,7 @@ print(zprime)               #미분한걸 그냥 출력
 
 print(zprime.subs({t:1})) #미분한 것에 t=1 대입
 
-'''
+
 #Problem 2-2
 
 

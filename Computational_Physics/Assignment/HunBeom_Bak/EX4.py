@@ -5,7 +5,7 @@ Created on Fri Dec 29 14:15:55 2017
 @author: Hunbeom Bak
 """
 
-from pylab import *
+
 from scipy.integrate import odeint
 from numpy import *
 import matplotlib.pyplot as plt
