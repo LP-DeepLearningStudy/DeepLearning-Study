@@ -20,6 +20,14 @@ import tensorflow as tf
 xy = np.genfromtxt('creditcard.csv', delimiter=',', dtype=np.float32, skip_header =1)
 #skip_header: 첫번째 줄은 무슨 데이터인지 알려주는 문자열, 따라서 불오는것을 생략함
 
+def MinMaxScaler(data):
+    numerator = data - np.min(data, 0)
+    denominator = np.max(data, 0) - np.min(data, 0)
+    # noise term prevents the zero division
+    return numerator / (denominator + 1e-7)
+
+xy = MinMaxScaler(xy)
+
 #train 셋 설정
 x_train = xy[:, 0:-1]
 y_train = xy[:, [-1]]   

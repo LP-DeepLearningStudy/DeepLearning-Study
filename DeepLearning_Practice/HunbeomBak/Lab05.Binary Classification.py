@@ -26,7 +26,7 @@ print(x_train.shape, y_train.shape)
 X = tf.placeholder(tf.float32, shape=[None, 8])
 Y = tf.placeholder(tf.float32, shape=[None, 1])
 
-W = tf.Variable(tf.random_normal([8, 1]), name='weight')
+W = tf.get_variable("W",shape=[8, 1],initializer=tf.contrib.layers.xavier_initializer())
 b = tf.Variable(tf.random_normal([1]), name='bias')
 
 #가설(Hypothesis)
@@ -36,8 +36,7 @@ H = tf.sigmoid(tf.matmul(X, W) + b)
 cost = -tf.reduce_mean(Y * tf.log(H) + (1 - Y) *tf.log(1 - H))
 
 #기울기 감소법
-train = tf.train.GradientDescentOptimizer(learning_rate=0.01).minimize(cost)
-
+train = tf.train.AdamOptimizer(learning_rate=0.001).minimize(cost)
 
 predicted = tf.cast(H > 0.5, dtype=tf.float32) #예측값이 0.5넘으면 pass, 아니면 false
 accuracy = tf.reduce_mean(tf.cast(tf.equal(predicted, Y), dtype=tf.float32)) #맞춘거 평균냄
